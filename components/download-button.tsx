@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Download } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 interface DownloadButtonProps {
-  className?: string
-  size?: "default" | "sm" | "lg"
-  variant?: "default" | "outline" | "secondary"
-  children: React.ReactNode
+  className?: string;
+  size?: "default" | "sm" | "lg";
+  variant?: "default" | "outline" | "secondary";
+  children: React.ReactNode;
 }
 
 export default function DownloadButton({
@@ -19,29 +19,34 @@ export default function DownloadButton({
   variant = "default",
   children,
 }: DownloadButtonProps) {
-  const [isDownloading, setIsDownloading] = useState(false)
+  const [isDownloading, setIsDownloading] = useState(false);
 
   const handleDownload = async () => {
     try {
-      setIsDownloading(true)
+      setIsDownloading(true);
 
-      // Sử dụng link Google Drive trực tiếp
-      // Link tải xuống trực tiếp từ Google Drive
-      window.location.href = "https://drive.google.com/uc?export=download&id=11Hx3DaHecO_SwGK9--JspEj-P4pMnwh1"
+      window.location.href =
+        "https://github.com/NVNnguyen/pis-download-web/releases/download/v1.0.0/application-de0448c1-1ab7-4ed7-b4a9-cb46f084385b.apk";
 
       // Đặt timeout để reset trạng thái sau khi đã chuyển hướng
       setTimeout(() => {
-        setIsDownloading(false)
-      }, 3000)
+        setIsDownloading(false);
+      }, 3000);
     } catch (error) {
-      console.error("Error downloading APK:", error)
-      alert("Failed to download APK. Please try again later.")
-      setIsDownloading(false)
+      console.error("Error downloading APK:", error);
+      alert("Failed to download APK. Please try again later.");
+      setIsDownloading(false);
     }
-  }
+  };
 
   return (
-    <Button className={className} size={size} variant={variant} onClick={handleDownload} disabled={isDownloading}>
+    <Button
+      className={className}
+      size={size}
+      variant={variant}
+      onClick={handleDownload}
+      disabled={isDownloading}
+    >
       {isDownloading ? (
         <>Downloading...</>
       ) : (
@@ -50,6 +55,5 @@ export default function DownloadButton({
         </>
       )}
     </Button>
-  )
+  );
 }
-

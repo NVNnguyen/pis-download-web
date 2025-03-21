@@ -1,17 +1,20 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Download } from "lucide-react"
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 export default function AppPreview() {
   return (
-    <section className="py-16 bg-gray-900">
+    <section id="download" className="py-16 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
-            <h2 className="text-3xl font-bold mb-6 text-white">Pis Social Network</h2>
+            <h2 className="text-3xl font-bold mb-6 text-white">
+              Pis Social Network
+            </h2>
             <p className="text-gray-400 mb-8">
-              A modern social platform with a focus on simplicity and meaningful connections. Our black and white
-              interface eliminates distractions and lets you focus on what matters.
+              A modern social platform with a focus on simplicity and meaningful
+              connections. Our black and white interface eliminates distractions
+              and lets you focus on what matters.
             </p>
 
             <div className="space-y-4">
@@ -21,7 +24,9 @@ export default function AppPreview() {
                 </div>
                 <div>
                   <h3 className="font-bold text-white">Download the APK</h3>
-                  <p className="text-gray-400">Get the latest version directly from our website</p>
+                  <p className="text-gray-400">
+                    Get the latest version directly from our website
+                  </p>
                 </div>
               </div>
 
@@ -31,7 +36,9 @@ export default function AppPreview() {
                 </div>
                 <div>
                   <h3 className="font-bold text-white">Install the App</h3>
-                  <p className="text-gray-400">Follow the simple installation instructions</p>
+                  <p className="text-gray-400">
+                    Follow the simple installation instructions
+                  </p>
                 </div>
               </div>
 
@@ -41,13 +48,24 @@ export default function AppPreview() {
                 </div>
                 <div>
                   <h3 className="font-bold text-white">Create Your Account</h3>
-                  <p className="text-gray-400">Join the community and start connecting</p>
+                  <p className="text-gray-400">
+                    Join the community and start connecting
+                  </p>
                 </div>
               </div>
             </div>
 
-            <Button size="lg" className="mt-8 bg-white text-black hover:bg-gray-200">
-              <Download className="mr-2 h-5 w-5" /> Download Now
+            <Button
+              size="lg"
+              className="mt-8 bg-white text-black hover:bg-gray-200"
+              asChild
+            >
+              <a
+                href="https://github.com/NVNnguyen/pis-download-web/releases/download/v1.0.0/application-de0448c1-1ab7-4ed7-b4a9-cb46f084385b.apk"
+                download
+              >
+                <Download className="mr-2 h-5 w-5" /> Download Now
+              </a>
             </Button>
           </div>
 
@@ -64,6 +82,5 @@ export default function AppPreview() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
