@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Clone project
 git clone https://github.com/NVNnguyen/pis-download-web.git
 
@@ -19,3 +20,6 @@ npm run start
 docker build -t .
 
 #docker run pis-download-web
+=======
+# pis-download-web
+>>>>>>> f12fbb1b6e9e643c8f7078d936b67214b589a376
